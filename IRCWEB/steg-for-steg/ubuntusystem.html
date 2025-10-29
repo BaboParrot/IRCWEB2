@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a One-Page Site</title>
+  <link rel="stylesheet" href="../assets/style/style.css" />
+</head>
+<body>
+  <div class="layout">
+
+   
+    <aside class="sidebar">
+      <h1 class="site-title">Sider</h1>
+      <div class="menu">
+        <div class="menu-section">
+          <button class="menu-toggle"> General information▾</button>
+          <ul class="menu-list">
+            <li><a href="../introduksjon/innhold.html">Innholdsfortegnelse</a></li>
+            <li><a href="#">Hva du vil lære</a></li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <button class="menu-toggle"> Steg-for-steg gjennomgang▾</button>
+          <ul class="menu-list">
+            <li><a href="/steg-for-steg/hyperv.html">Låse opp Hyper V</a></li>
+            <li><a href="/steg-for-steg/ubuntus.html">Ordne en Ubuntu Server</a></li>
+            <li><a class="active" href="/steg-for-steg/ubuntusystem.html">Sette opp Ubuntu Server Systemet</a></li>
+          </ul>
+      </div>
+    </aside>
+
+    <main class="content">
+     
+
+      <article>
+        <h1>Sette opp en Ubuntu Server</h1>
+        <h2>Steg 1: </h2>
+        <p>Gå </p>
+        <img src="../assets/images/part1/page1/pic#.png" alt="pic that i didnt edit" class="article-img">
+
+
+        <header>
+        <a href="ubuntus.html" class="nav-btn">← Forrige leksjon</a>
+        <a href="#" class="nav-btn next">Neste Leksjon →</a>
+      </header>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const list = button.nextElementSibling;
+        list.classList.toggle('open');
+        button.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

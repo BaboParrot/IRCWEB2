@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a One-Page Site</title>
+  <link rel="stylesheet" href="../assets/style/style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    
+    <aside class="sidebar">
+      <h1 class="site-title">Sider</h1>
+      <div class="menu">
+        <div class="menu-section">
+          <button class="menu-toggle"> General information▾</button>
+          <ul class="menu-list">
+            <li><a href="../introduksjon/innhold.html">Innholdsfortegnelse</a></li>
+            <li><a href="#">Hva du vil lære</a></li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <button class="menu-toggle"> Steg-for-steg gjennomgang▾</button>
+          <ul class="menu-list">
+            <li><a href="/steg-for-steg/hyperv.html">Låse opp Hyper V</a></li>
+            <li><a class="active" href="/steg-for-steg/ubuntus.html">Ordne en Ubuntu Server</a></li>
+            <li><a href="/steg-for-steg/ubuntusystem.html">Sette opp Ubuntu Server Systemet</a></li>
+          </ul>
+      </div>
+    </aside>
+
+  
+    <main class="content">
+     
+
+      <article>
+        <h1>Sette opp en Ubuntu Server i windows</h1>
+        <p>NB: Det er noen få krav man burde følge for å ha en Ubuntu Server. Sørg for at du utfyller disse kravene: </p>
+           <h2>Maskinvarekrav</h2>
+        <ul>
+          <li>Hyper-V opplåst</li>
+          <li>64-bit CPU</li>
+          <li>1-2 GB ram</li>
+          <li>Minst 10 Gb lagringsplass</li>
+        </ul>
+
+        <h2>Steg 1: Søk i nettleseren etter ubuntu</h2>
+        <p>Gå i søkemotoren til windows og søk "ubuntu", deretter klikker du på "Get Ubuntu Server"</p>
+        <img src="../assets/images/part1/page1/pic#.png" alt="pic that i didnt edit" class="article-img">
+
+        <h2>Steg 2: Last ned Ubuntu 24.04.3 LTS </h2>
+        <p>Når du har kommet til denne siden, Klikk på den store grønne knappen som står "Download 24.043 LTS". Dette laster ned en ISO fil. </p>
+        <img src="../assets/images/part1/page1/pic4.png" alt="pic4" class="article-img">
+
+        <h2>Steg 3: Lag en Virtual switch manager</h2>
+        <p>Gå inn i Hyper-V og klikk “Virtual Switch Manager” under Actions. Deretter lager du en External Virutal Switch som har på “Allow management operating system to share this network adapter”. Navngi den feks “ForVM”.  </p>
+        <img src="../assets/images/part1/page1/pic5.png" alt="pic5" class="article-img">
+        <img src="../assets/images/part1/page1/pic#.png" alt="pic that i didnt edit. show the Forvm" class="article-img">
+
+        <h2>Steg 4: Lag en virtuell maskin</h2>
+        <p>I Hyper-V, gå på “New” under Actions på starts-skjermen. Velg så “Virtual Machine”. Gi maskinen et passende navn</p>
+        <img src="../assets/images/part1/page1/pic6.png" alt="pic that i didnt edit" class="article-img">
+        <img src="../assets/images/part1/page1/pic#.png" alt="pic that i didnt edit. har kommet til step 5 på irc dokument." class="article-img">
+
+
+        <header>
+        <a href="hyperv.html" class="nav-btn">← Forrige leksjon</a>
+        <a href="ubuntusystem.html" class="nav-btn next">Neste Leksjon →</a>
+      </header>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const list = button.nextElementSibling;
+        list.classList.toggle('open');
+        button.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

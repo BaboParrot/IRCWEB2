@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Multi-Page Site</title>
+  <link rel="stylesheet" href="../assets/style/style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h1 class="site-title">Sette opp IRC server på en Ubuntu-Server i Hyper-V </h1>
+      <div class="menu">
+        <div class="menu-section">
+          <button class="menu-toggle"> General information▾</button>
+          <ul class="menu-list">
+            <li><a class="active" href="innhold.html">Innholdsfortegnelse</a></li>
+            <li><a href="one-page.html">Hva du vil lære</a></li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <button class="menu-toggle"> Hyper V▾</button>
+          <ul class="menu-list">
+            <li><a href="#">x</a></li>
+            <li><a href="#">x</a></li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <button class="menu-toggle"> Sette opp Ubuntu Serveren▾</button>
+          <ul class="menu-list">
+            <li><a href="#">x</a></li>
+            <li><a href="#">x</a></li>
+          </ul>
+        </div>
+        <div class="menu-section">
+          <button class="menu-toggle"> Sette opp en IRC server▾</button>
+          <ul class="menu-list">
+            <li><a href="#">x</a></li>
+            <li><a href="#">x</a></li>
+          </ul>
+        </div>
+         <div class="menu-section">
+          <button class="menu-toggle"> troubleshooting▾</button>
+          <ul class="menu-list">
+            <li><a href="#">x</a></li>
+            <li><a href="#">x</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <article>
+        <h1>Innhold</h1>
+        <p>Welcome to this lesson! Here we’ll learn how to structure and link multiple pages together for a professional layout.</p>
+
+        <h2>Lesson Overview</h2>
+        <p>Each page should have its own file and be linked in your navigation menu...</p>
+
+        <h2>Lesson Homework</h2>
+        <p>Try building a simple 3-page mini website (Home, About, Contact) using this layout.</p>
+        <img src="../assets/images/part1/page1/example.jpg" alt="Example" class="article-img">
+
+      </article>
+          <header>
+        <a href="one-page.html" class="nav-btn">← Previous Lesson</a> <!--husk å gjøre til norsk omg PÅ ALLE SIDENE-->
+        <a href="one-page.html" class="nav-btn next">Next Lesson →</a>
+      </header>
+
+    </main>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.menu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const list = button.nextElementSibling;
+        list.classList.toggle('open');
+        button.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
