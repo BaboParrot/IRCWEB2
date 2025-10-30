@@ -8,67 +8,68 @@
 </head>
 <body>
   <div class="layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <h1 class="site-title">Sette opp IRC server på en Ubuntu-Server i Hyper-V </h1>
-      <div class="menu">
+        <div class="menu">
         <div class="menu-section">
           <button class="menu-toggle"> General information▾</button>
           <ul class="menu-list">
-            <li><a class="active" href="innhold.html">Innholdsfortegnelse</a></li>
-            <li><a href="one-page.html">Hva du vil lære</a></li>
+            <li><a  class="active" href="../introduksjon/innhold.html">Introduksjon til prosjekt</a></li>
           </ul>
         </div>
         <div class="menu-section">
-          <button class="menu-toggle"> Hyper V▾</button>
+          <button class="menu-toggle"> Steg-for-steg gjennomgang▾</button>
           <ul class="menu-list">
-            <li><a href="#">x</a></li>
-            <li><a href="#">x</a></li>
+            <li><a href="../steg-for-steg/hyperv.html">Låse opp Hyper V</a></li>
+            <li><a href="../steg-for-steg/ubuntus.html">Ordne en Ubuntu Server</a></li>
+            <li><a href="../steg-for-steg/ubuntusystem.html">Sette opp Ubuntu Server Systemet</a></li>
           </ul>
-        </div>
-        <div class="menu-section">
-          <button class="menu-toggle"> Sette opp Ubuntu Serveren▾</button>
-          <ul class="menu-list">
-            <li><a href="#">x</a></li>
-            <li><a href="#">x</a></li>
-          </ul>
-        </div>
-        <div class="menu-section">
-          <button class="menu-toggle"> Sette opp en IRC server▾</button>
-          <ul class="menu-list">
-            <li><a href="#">x</a></li>
-            <li><a href="#">x</a></li>
-          </ul>
-        </div>
-         <div class="menu-section">
-          <button class="menu-toggle"> troubleshooting▾</button>
-          <ul class="menu-list">
-            <li><a href="#">x</a></li>
-            <li><a href="#">x</a></li>
-          </ul>
-        </div>
       </div>
     </aside>
-    <!-- MAIN CONTENT -->
     <main class="content">
       <article>
-        <h1>Innhold</h1>
-        <p>Welcome to this lesson! Here we’ll learn how to structure and link multiple pages together for a professional layout.</p>
+        <header>
+          <a href="#" class="nav-btn">←</a>
+          <a href="ubuntus.html" class="nav-btn next">→</a>
+        </header>
 
-        <h2>Lesson Overview</h2>
-        <p>Each page should have its own file and be linked in your navigation menu...</p>
+        <h1>Velkommen!</h1>
+        <p>I denne opplæringen skal jeg demonstrere hvordan man setter opp en IRC-server på en Ubuntu-server. Oppsettet utføres ved hjelp av Hyper-V i Windows som vert for den virtuelle maskinen. Til kommunikasjon benyttes Weechat som klient, mens InspIRCd brukes til å konfigurere og administrere selve IRC-serveren. </p>
 
-        <h2>Lesson Homework</h2>
-        <p>Try building a simple 3-page mini website (Home, About, Contact) using this layout.</p>
-        <img src="../assets/images/part1/page1/example.jpg" alt="Example" class="article-img">
+        <h2>Hva du vil lære</h2>
+        <ul>
+          <li>Hva Hyper-V og en Ubuntu-Server er.</li>
+          <li>Litt informasjon om IRC-servere, Weechat og InspIRCd.</li>
+          <li>Sette opp en IRC-Server på en Ubuntu-Serber i Hyper-V.</li>
+          <li>Hvordan å bruke SSH.</li>
+          <li>Installere og konfigurere InspIRCd, MOTD og Rules.</li>
+          <li>Koble IRC-Serveren til Weechat.</li>
+          <li>Lage et chatrom som har en Python-bot</li>
+          <li>Bruke WSL (Windows Subsystem for Linux) for å koble til serveren som bruker.</li>
+        </ul>
 
+        <h2>Introduksjon til programmene</h2>
+        <h3>Hva er Hyper-V?</h3>
+        <p>Hyper-V er virtualiseringstjenesten til Windows. Programmet er noe som er inkludert i Pro og Enterprise utgavene av windows. Dette vil si at hvis man vil ha tilgang til programmet, er man for eksempel nødt til å ha Windows 10/11 Pro eller Enterprise.  </p>
+        <p>Hyper-V kan bli brukt det til å opprette virtuelle maskiner på x86-64 systemer, disse kan kjøre alt fra windows til linux. Ved bruk av Hyper-V har man muligheten til å kjøre flere separate virtuelle maskiner på bare en fysisk maskin. Dette er en fin løsning i driftsmiljøer for å spare plass og spare strøm siden det er virtuelt.  </p>
+        <p>Det er også nyttig for den enkelte personen. Hvis man holder mye på med å teste og laste ned programmer fra ukjente kilder, er virtualisering veien å gå. Man vil få mer kontroll over hva hver maskin har tilgang på, og et angrep på den vil ikke gå utover hovedmaskinen. Det er normalt å kalle det et gjesteoperativsystem.  </p>
+        <img src="../assets/images/introduction/hyper-v.webp" alt="Example" class="article-img">
+
+        <h3>Hva er en Ubuntu-Server?</h3>
+        <p>Ubuntu Server er en populær Linux-distribusjon som er spesielt designet for servermiljøer. Den er basert på Debian og utviklet av Canonical Ltd. Ubuntu Server tilbyr et stabilt, sikkert og brukervennlig operativsystem som er ideelt for å kjøre ulike typer serverapplikasjoner og tjenester. </p>
+        <p>En Ubuntu Server kommer med en rekke forhåndsinstallerte verktøy og pakker som gjør det enkelt å sette opp og administrere servere. Den støtter et bredt spekter av serverroller, inkludert webservere, databaser, filservere, e-postservere og mer. </p>
+        <p>En av fordelene med Ubuntu Server er dens brukervennlighet og omfattende dokumentasjon. Den har et stort fellesskap av brukere og utviklere som bidrar til å forbedre og støtte operativsystemet. Dette gjør det enklere for både nybegynnere og erfarne brukere å finne hjelp og ressurser når de jobber med Ubuntu Server. </p>
+        <img src="../assets/images/introduction/Ubuntu-Server-22.04-LTS.png" alt="Example" class="article-img">
+
+        <h3>Om Weechat</h3>
+        <p>Weechat er en IRC-klient som brukes til å koble seg til og kommunisere på IRC-servere. Den kjører i terminalen og er kjent for å være lett, rask og svært tilpasningsdyktig. Programmet støtter også utvidelser og skript skrevet i flere språk, blant annet Python, noe som gjør det mulig å automatisere eller utvide funksjonaliteten.</p>
+        <img src="../assets/images/introduction/weechat-buffer.png" alt="Example" class="article-img">
+
+        <header>
+          <a href="#" class="nav-btn">←</a>
+          <a href="ubuntus.html" class="nav-btn next">→</a>
+        </header>
       </article>
-          <header>
-        <a href="one-page.html" class="nav-btn">← Previous Lesson</a> <!--husk å gjøre til norsk omg PÅ ALLE SIDENE-->
-        <a href="one-page.html" class="nav-btn next">Next Lesson →</a>
-      </header>
-
     </main>
 
   </div>
