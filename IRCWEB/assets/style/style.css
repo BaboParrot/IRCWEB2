@@ -173,6 +173,25 @@ header {
   transform: translateY(-2px);
 }
 
+.source {
+  font-size: 0.85rem;
+  color: #777;
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.source a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.source a:hover {
+  color: #0077ff;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
 /* --- Animation --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-4px); }
