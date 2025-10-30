@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="../IRCWEB/assets/style/style.css" />
 </head>
 <body class="body-forside">
+    <div id="page-overlay"></div>
+    
     <div class="header finisher-header" style="width: 100vw; height: 100vh;">
         <div class="banner">
                 <div class="content">
@@ -50,5 +52,24 @@
 });
 
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('page-overlay');
+    const button = document.querySelector('.button');
+
+    button.addEventListener('click', function(e) {
+        e.preventDefault(); // prevent instant navigation
+        const href = this.getAttribute('href');
+
+        overlay.style.opacity = 1;
+
+        setTimeout(() => {
+            window.location.href = href; // navigate after fade
+        }, 600); 
+    });
+});
+</script>
+
+
 </body>
 </html>

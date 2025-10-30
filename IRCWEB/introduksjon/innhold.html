@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Building a Multi-Page Site</title>
   <link rel="stylesheet" href="../assets/style/style.css" />
+  <script src="/IRCWEB/assets/scripts/NavbarCloseLogic.js" defer></script>
 </head>
 <body>
   <div class="layout">
@@ -100,15 +101,7 @@
 
   </div>
 
-  <script>
-    document.querySelectorAll('.menu-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const list = button.nextElementSibling;
-        list.classList.toggle('open');
-        button.classList.toggle('open');
-      });
-    });
-  </script>
+  
 
 </body>
 </html>

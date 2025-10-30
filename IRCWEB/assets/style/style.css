@@ -44,6 +44,7 @@ body {
   width: 100%;
   text-align: left;
   font-weight: 600;
+  font-size: 1rem; 
   padding: 0.7rem 1rem;
   border-radius: 8px;
   margin-top: 0.3rem;
@@ -61,12 +62,16 @@ body {
   padding-left: 0;
   margin: 0.4rem 0 0 0;
   list-style: none;
-  display: none;
+  overflow: hidden;
+  max-height: 1000px;       
+  opacity: 1;
 }
 
-.menu-list.open {
-  display: block;
-  animation: fadeIn 0.3s ease;
+
+.menu-list.closed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;             
 }
 
 .menu-list a {
@@ -87,7 +92,7 @@ body {
 .menu-list a.active {
   background: linear-gradient(135deg, #0077ff, #00aaff);
   color: #fff;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 
@@ -114,7 +119,7 @@ article {
   display: block;
   margin: 1.5rem auto;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(197, 45, 45, 0.15); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
 }
 
 
@@ -140,7 +145,7 @@ article p, article ul {
   color: #444;
 }
 
-/* --- Header Buttons --- */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -193,18 +198,33 @@ header {
   transition: color 0.2s ease;
 }
 
+#page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;           
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 99999;              
+}
+
+
+
 .body-forside {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden; 
 }
 
 .banner {
-    height: 100vh;                  /* full viewport height */
+    height: 100vh;                  
     display: flex;
-    justify-content: center;         /* vertical centering */
-    align-items: center;             /* horizontal centering */
+    justify-content: center;        
+    align-items: center;            
     text-align: center;
     padding: 20px;                   /* just small padding for mobile */
     box-sizing: border-box;          /* ensures padding doesn’t break centering */
@@ -212,16 +232,13 @@ header {
 
 
 .banner .content {
-    max-width: 600px;  /* max width */
+    max-width: 600px;  
     width: 90%;        /* responsive width for small screens */
     padding: 40px;
     border-radius: 60px;
     background: rgba(181, 197, 221, 0.75);
     box-shadow: 0 40px 50px rgba(0,0,0,0.2);
 }
-
-
-
 
 .banner .content h1 {
     font-size: 3rem;
@@ -239,8 +256,8 @@ header {
     padding: 15px 40px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #000000;
     background: #005fdd;
+    color: rgb(41, 39, 39);
     border-radius: 50px;
     text-decoration: none;
     transition: transform 0.4s, background 0.5s, color 0.5s;
@@ -253,13 +270,13 @@ header {
     color: white;
 }
 
-/* --- Animation --- */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Responsive Fix --- */
+
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
